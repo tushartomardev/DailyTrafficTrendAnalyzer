@@ -1,0 +1,880 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ecommerce website</title>
+    <style>@import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+/* global styles */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "League Spartan", sans-serif;
+}
+
+h1 {
+  font-size: 50px;
+  line-height: 64px;
+  color: #222;
+}
+h2 {
+  font-size: 46px;
+  line-height: 54px;
+  color: #222;
+}
+h4 {
+  font-size: 20px;
+  color: #222;
+}
+h6 {
+  font-weight: 700;
+  font-size: 12px;
+}
+p {
+  font-size: 16px;
+  color: #465b52;
+  margin: 15px 0 20px 0;
+}
+.section-p1 {
+  padding: 40px 0;
+}
+.section-m1 {
+  margin: 40px 0;
+}
+
+button.normal {
+  font-size: 14px;
+  font-weight: 600px;
+  padding: 15px 30px;
+  color: #000;
+  background-color: #fff;
+  border-radius: 4px;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  transition: 0.2s;
+}
+button.normal:hover {
+  background-color: #088178;
+  color: #fff;
+}
+body {
+  width: 100%;
+}
+
+/* header styles */
+
+#header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #e3e6f3;
+  padding: 20px 80px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
+  z-index: 999;
+  position:fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.header-list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.header-list-nav ul {
+  display: flex;
+}
+.header-list-nav ul li {
+  list-style-type: none;
+  padding: 0 20px;
+  position: relative;
+}
+.header-list-nav ul a {
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 600;
+  color: #1a1a1a;
+  transition: 0.3s ease;
+}
+.header-list-nav ul a:hover,
+.header-list-nav ul a.active {
+  color: #088178;
+  content: "";
+}
+.header-list-icon a {
+  color: #1a1a1a;
+  padding-left: 20px;
+  transition: 0.3s ease;
+}
+.header-list-icon a:hover,
+.header-list-nav ul a.active {
+  color: #088178;
+}
+.header-list-nav ul li a:hover::after,
+.header-list-nav ul li a.active::after {
+  content: "";
+  width: 30%;
+  height: 2px;
+  background: #088178;
+  position: absolute;
+  bottom: -4px;
+  left: 20px;
+}
+
+/* home main styles */
+
+/* hero section styles */
+
+#hero {
+  background-image: url(https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj3IzdJlRgEMqMs8J7x2I-5CXaMLPe9vKYjRYA7mmjQVonrnWq6NWD_ypZq7yhl5ZY5RARSq9QqEwX9uxuPgrmYrUlGNFv69aH-VhSvKlRt9UzmVC7qUn0jQkcdYIMuLasjCuop-sal4WT35_C0bynZ8N-tEZ102tPjt1AxuCwgQCveco8pCRPYrXSQinw/s1600/hero4.png);
+  width: 100%;
+  height: 100vh;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 0 80px;
+}
+
+#hero h4 {
+  padding-bottom: 15px;
+  font-size: 40px;
+}
+#hero h2{
+  font-size: 70px;
+
+}
+#hero h1 {
+  color: #088178;
+  font-size: 70px;
+
+}
+#hero button {
+  background-color: transparent;
+  background-image: url(https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhDfeqpSrKOhMKbA8wvH2BPQq9RMK2KATI-OJLpeRj5X1bBAuP5bd01ZFPljwVLtRP6690DRmZv0mQxbgnViipikSWDuXf3pTwEIes1rao3PI3LTNeLejXCQjSfjcFavT7djrt8IKZzvcIogs2SP0wQQh23mu5k2JM6Y0jFL65DW02-lluZMe3plAgUr4Q/s1600/button.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 260px;
+  height: 60px;
+  border: 0;
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: 700;
+  color: #088178;
+  padding: 14px 65px 14px 65px;
+}
+
+/* feature section styles */
+
+#features {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+#features .f-box {
+  width: 180px;
+  text-align: center;
+  padding: 25px 15px;
+  box-shadow: 20px 20px 34px rgba(0, 0, 0, 0.03);
+  border: 1px solid #cce7d0;
+  border-radius: 4px;
+  margin: 15px 0;
+  transition: box-shadow 0.3s;
+}
+#features .f-box:hover {
+  box-shadow: 10px 10px 54px rgba(0, 0, 0, 0.1);
+}
+#features .f-box img {
+  width: 100%;
+  margin-bottom: 10px;
+}
+#features .f-box h6 {
+  display: inline-block;
+  padding: 9px 8px 6px 8px;
+  line-height: 1;
+  font-size: 14px;
+  border-radius: 4px;
+  color: #088178;
+  background-color: #fddde4;
+}
+#features .f-box:nth-child(2) h6 {
+  background-color: #cdebbc;
+}
+#features .f-box:nth-child(3) h6 {
+  background-color: #d1e8f2;
+}
+#features .f-box:nth-child(4) h6 {
+  background-color: #cdd4f8;
+}
+#features .f-box:nth-child(5) h6 {
+  background-color: #f6dbf6;
+}
+#features .f-box:nth-child(6) h6 {
+  background-color: #fff2e5;
+}
+
+/* feature section styles */
+
+.product-section .pro-collection {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin: 0 60px;
+}
+.product-section h1,
+.product-section p {
+  text-align: center;
+}
+.product-section .product-cart {
+  width: 280px;
+  border: 1px solid #ebebeb;
+  padding: 13px;
+  margin-bottom: 30px;
+  border-radius: 25px;
+  position: relative;
+  box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.02);
+  transition: box-shadow 0.2s;
+}
+.product-section .product-cart:hover {
+  box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.06);
+}
+.product-section .product-cart img {
+  width: 100%;
+  border-radius: 25px;
+}
+.product-section .product-cart span {
+  color: #969696;
+  font-weight: 500;
+  line-height: 30px;
+}
+.product-section .product-cart h4 {
+  font-size: 18px;
+  color: rgb(41, 41, 41);
+}
+.product-section .product-cart .stars {
+  color: #e6ae2c;
+  padding: 6px 0;
+}
+.product-section .product-cart .price {
+  color: #088178;
+  padding: 4px 0;
+}
+.product-section .product-cart .buy-icon {
+  color: #088178;
+  background-color: #c7e9e75e;
+  padding: 15px;
+  border-radius: 50px;
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+}
+
+/* off banner section styles */
+
+#off-banner {
+  background-image: url(https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhLm4gk1ywLg1_5mt1mkaFV8Hcq9ZjURqhmjw0vteVsOUD5rsW8V09KjwMrcSMl-LFiDBZnuZydbDgMGkXnjL8d7YWYhF__-NXhCv8bZnu13N6WgNs2KFK45dFXCZrPvAoK1DeHGLamZXv3H-fXIED1Eb_9sCyhkNbYJCuu9CP734AlbvNa-VRAgNM8Bww/s1600/b2.jpg);
+  background-size: cover;
+  width: 100%;
+  height: 40vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+#off-banner h4 {
+  color: #eaebf0;
+}
+#off-banner h2 {
+  color: #eaebf0;
+  padding: 20px 0;
+}
+
+/* new arrival section styles 
+  this section gets the same styles 
+  in featured products section
+*/
+
+/* banners section styles */
+
+#banners {
+  margin: 0 60px;
+}
+#banners h2,
+h4,
+span {
+  color: rgb(248, 248, 248);
+}
+#banners .big-banners {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#banners .big-banners div {
+  min-width: 580px;
+  margin: 15px;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 25px;
+  background-size: cover;
+  backdrop-filter: blur(8%);
+}
+#banners .big-banners button {
+  margin-top: 20px;
+  padding: 12px 20px;
+  font-size: 16px;
+  font-weight: 500;
+  background-color: transparent;
+  color: rgb(248, 248, 248);
+  border: 1px solid rgb(248, 248, 248);
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+#banners .big-banners div:hover button {
+  background-color: #088178;
+  border: 1px solid #088178;
+}
+#banners .big-banners-1 {
+  background-image: url(https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiYwu4tlfGJQ72ZFMn5R622a2HFtfqdrzBSyQHeKgZA9fEQ-_EYLDNTSMDpy0GPmZ2Hmq2SCPpGUq0EhO41pBBlf8k0bzmC8SXvVl9pXuV1vAH8CTGH-rB39LyMd2THQHi2b-UbrF-e5jRq91aGrjzoGijs2G0-jymggzyeCdp85awYwSIxPz7FytHa2EE/s1600/b17.jpg);
+}
+#banners .big-banners-2 {
+  background-image: url(https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhkMSNT9UhPQjcsBOU4lxAQJIh1xaNNFYb7gWe_Sz977Y2lbFft2gs8YROJ0S1mhpuEN3WAuE1iNk-i4ZY-1fZiKuoF7k7zRJaOnm-eqjyw-FJfcb4dFiDDkgByUMPHLhyM3rSKBRML-91DuMrqUQdTzVGSEgaCfV1uTFF9iLnH9tpSxuIgBESPE0hMOYU/s1600/b10.jpg);
+}
+#banners .small-banners-1 {
+  background-image: url(https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiPJ53HlCrAbEsSHSX2RdFwIdKIm4u-cYpJHjWjpRd1-BLyap2Fj3W_aVqgNxNQ-YCczGEdcR62XuaBCsNyL2Qq5zbk9hbPX6aIPG8wV_0qEOwOeO2Ay50ZqXW2stlWsg87S3LQ4jzItraZyR1JOKPm3auBgG-Qjtb63rBP9drZj8k8ImcEQskD1nDGFEM/s1600/b7.jpg);
+}
+#banners .small-banners-2 {
+  background-image: url(https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhHQSLJbyfQEOIEI9iTDArw10bX95HepEHQwe-80F4G0y6Lkh6raa3h9xvgSqxGmUw6QU0sLsb6QptVEOGUFcOJcUs_F-deznmE2keZ0tFv-WBSK2xU8ZhcuiSqw3DNwtcXENwJCN1EprfZ5TpLo72zRfT0cud161VPnh5KkE8Clr89MTKSqLgdeSporLI/s1600/b4.jpg);
+}
+#banners .small-banners-3 {
+  background-image: url(https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgPhmpRSc3rfQU2e9XLfpq8XVN5GSDYQyBJ8a281fw7Lf-8ngfe-Qk0aSeuMV_05j1fCOgNVPLaGB9oxYdjHJGK_qR5TrOgb3LEoNziZVLbW84rJDheiV9ihNKXiyft2Umlu3hw6JNz41T3tINLPxUujQZkIJaMHulj-CAJYL6u3uZUaph4c19CJnNIe10/s1600/b18.jpg);
+}
+#banners .small-banners {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#banners .small-banners div {
+  min-width: 370px;
+  height: 200px;
+  margin: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 25px;
+  background-size: cover;
+}
+#banners .small-banners h2 {
+  font-size: 25px;
+}
+#banners .small-banners h5 {
+  color: #771818;
+}
+
+/* newsletter section styles */
+
+#newsletter {
+  background-image: url(https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi4wc7sqK2FrI0rK-KJSAG_ob2FrEPlgY_mvJ3-HvijH6YVMRFmyLQYX7kPW3s6nlgEAdeDdWpUbr0OhCmdBeoxgMTsikGU3LqbRIbZySvONACVAB6lAbtz1hyUv5Zw1FMWHCXbgEHJA0FGRzb-b7bds7KI4QjMoToVnsw3b51qm9OvXE7TOsifEbfm5MU/s1600/b14.png);
+  background-repeat: no-repeat;
+  background-position: 180px;
+  background-color: #041e42;
+  height: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 75px;
+}
+#newsletter .newsletter-text h3 {
+  color: white;
+  font-size: 30px;
+  padding: 0 0 15px 0;
+}
+#newsletter .newsletter-text h5 {
+  color: rgb(151, 151, 151);
+  font-size: 17px;
+}
+#newsletter .newsletter-text h5 span {
+  color: rgb(216, 182, 29);
+}
+#newsletter .form input {
+  padding: 20px;
+  width: 350px;
+  height: 56px;
+  background-color: #d1d0d0;
+  border-radius: 6px 0 0 6px;
+  font-size: 18px;
+
+  border: none;
+  outline: none;
+  margin-right: -4px;
+  margin-top: 1px;
+}
+#newsletter .form button {
+  margin-left: 0;
+  padding: 20px;
+  border: none;
+  width: 120px;
+  background-color: #088178;
+  color: white;
+  font-size: 17px;
+  border-radius: 0 6px 6px 0;
+  cursor: pointer;
+}
+
+/* footer section styles */
+
+#footer{
+  display: flex;
+  align-items:flex-start;
+  justify-content: space-between;
+  padding: 75px;
+  background-color: #ececec;
+}
+#footer div{
+}
+#footer p, #footer a{
+  color: rgb(109, 109, 109);
+  text-decoration: none;
+}
+#footer a:hover{
+  color:#088178;
+}
+#footer .about a{
+  display: block;
+  padding:8px 0;
+}
+#footer .myaccount a{
+  display: block;
+  padding:8px 0;
+}
+#footer .download img{
+  border: 1px solid #08817969;
+  border-radius: 7px;
+}
+
+</style>
+    <script
+      src="https://kit.fontawesome.com/0e53af926d.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <!--header section-->
+
+    <header>
+      <div id="header">
+        <div class="header-logo">
+          <a href="indext.html"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh1IkD1Bk1pHJwflwHMMOOw-ZRulccP_El04-viL7TghUQZanOcTqXmot5BrWmC-4wsfzOppkQDSq8UnlT97oc5DHlmN5vs7y8XgdV625nMgibIqYqicY_apuk5I6Vvy1Sjb9cL259fiV4VFmD1tO0wZV9yylOoeYAKleTOU9RfeZlB1UkMN3GMbeC1VUM/s1600/logo.png" alt="" /></a>
+        </div>
+        <div class="header-list">
+          <nav class="header-list-nav">
+            <ul>
+              <li><a class="active" href="index.html">Home</a></li>
+              <li><a href="shop.html">Shop</a></li>
+              <li><a href="blog.html">Blog</a></li>
+              <li><a href="about.html">About</a></li>
+              <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+          </nav>
+          <div class="header-list-icon">
+            <a href=""><i class="fa fa-bag-shopping"></i></a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!--main section-->
+
+    <main>
+      <section id="hero">
+        <h4>Trade-in-offer</h4>
+        <h2>Super value deals</h2>
+        <h1>On all products</h1>
+        <p>save more coupons & up to 70% off!</p>
+        <button>Shop now</button>
+      </section>
+
+      <section id="features" class="section-p1">
+        <div class="f-box">
+          <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgZkzsNFmeubbx_5ntFBVoRGRSopXToaFqrX6yvSgxQq-rPIeRiFZF0KMqEsb2Cymk3wiQSp-rateOoiIcTd9p3hv5VvWBbjPW3a4CFGgUg98EayCZylPBCG-8KuOmaMntT_dEZp1BlShUwMyAwaZ1FYTQrxvtR0BllVkj5tH_5t_DXhHzcBN9x6hRVvAc/s1600/f1.png" alt="free shipping" />
+          <h6>Free shipping</h6>
+        </div>
+        <div class="f-box">
+          <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh2r2e-WKxhM4Sjlfr-OiYbYOrsAcWslG_M30ewjqjzHmjbvqLAB1pxGObV3Dg0p2vlxhb09kP2uFjT-BrtYOmW8ZIc1Ijr3wtVdIfIxLtPXrU1-w_26ojz0FNLwTg5v_6m7Oh_y587iObc_wYwqddwffoC2nIPeQ1-h0ACy4iuAqHScFsSJS5WgFKKX4c/s1600/f2.png" alt="online order" />
+          <h6>online order</h6>
+        </div>
+        <div class="f-box">
+          <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEivc6BkvK6m8kOE1r8GbdfpL7dE3su53YWDFEd2FQOqQjcjyilBy8p9PEDboPl9Lrrtxi1sPHJYnqy8jUXLfzT8e1BKx4IM3yf_SHi4qJP0C8K9ygg8gfT9tgU_UUQ1uMx-25hnzZioNmMP4x00HF0OUSoeVi7Z0pPhNT-MmM2SMGZsQFRt71mSd97Q3Vc/s1600/f3.png" alt="save money" />
+          <h6>save money</h6>
+        </div>
+        <div class="f-box">
+          <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhbmSsFp-NK76a9vaK-s0LRs5uC4nk674Kk4UO3xO_Bm88mi3KrsFOtS4VnFFZkY-xcACGur7fSpji42437l4fjUWWEiZnUxyYjgpg7yCt5znB49Ck0BVSFik5HeBGvXoomHHJoscBqHP2XAPKH8M1Pygarl83Zmp6PCq8ep963T5UDkE9C7gpjBrBVovo/s1600/f4.png" alt="promotions" />
+          <h6>promotions</h6>
+        </div>
+        <div class="f-box">
+          <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgEVIvRR_1N8JqNhQpQSurGP-HOI0IibTgBojm-l2bshWrGtuLkgSMu3dBbwyiRLfceOjh1uanPmU3bqr6ASSKdecYET_u09GfgTOtXUZeibkpRD10_QqVd-M3LCwIt50f2MNciIAM_ICFe49wy1LxZPmI1dIHsoivtiG4JgngNjaMBZgvMSXWx60XgoyA/s1600/f5.png" alt="happy sell" />
+          <h6>happy sell</h6>
+        </div>
+        <div class="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgoL8c15oYbs-YonYMcTtsS2-XygF_VQ25iTxNjJj7_6EsX6HvH1f1QOgcxNaoHEUFqFTXzNkQeuOxOJwsoer2QRetuwqAEl9u6wpeVyKqSQaUi_vly4m_Wy3Js-wRPzOqvKMN2ccZ0Xw2o0Hg7RpN8kw8quIYiLR2cvg5OTUz7sovlr1smh1bQ3yVGWJg/s1600/f6.png" alt="24/7 support" />
+          <!--h6>24/7 support</h6-->
+        </div>
+      </section>
+
+      <section class="product-section" class="section-p1">
+        <h1>Featured Products</h1>
+        <p>Summer Collection New Morden Design</p>
+        <div class="pro-collection">
+          <div class="product-cart">
+            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjN-BkylnCuwmCaR0EO8cT4dIxvvI7aRtrNMSs9wcZfNI_3JY7Sp43wZNrH9j7YlQXby5S9Y9ILWfqICL-J74gPmCbFkFtYT9A0cmHX_ztl1Qd6JbMn3sy9xjiMDBPThThia24VVhQMKcl2bMQJU9q0-yQKcS5XkKlT1YHRXUTH74sYfjdvedL8GFvK-zo/s1600/f1.jpg" alt="product image" />
+            <span>adidas</span>
+            <h4>Cartoon Astronaut T-Shirts</h4>
+            <div class="stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <h4 class="price">$78</h4>
+            <a href="#"><i class="fa-solid fa-cart-shopping buy-icon"></i></a>
+          </div>
+          <div class="product-cart">
+            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjxCO0wj4tV_Ca88skBRiRExv9Xyrv5IZfX2hLsU0kkpobACJYobKjhxqLRQMvd9QXr9_FMuNq4UGpcRtzLGU5uHHPRYy8_5a0Qoa6Vgukw4xX9O_3zJJbHdhdtaA3QsjjwZnZ5lOP8HNp_gyJQ2V5oG8YIouI-AUdqejtd0cPtYHvbiWr9HHIjq6Eq3Qk/s1600/f2.jpg" alt="product image" />
+            <span>adidas</span>
+            <h4>Cartoon Astronaut T-Shirts</h4>
+            <div class="stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <h4 class="price">$78</h4>
+            <a href="#"><i class="fa-solid fa-cart-shopping buy-icon"></i></a>
+          </div>
+          <div class="product-cart">
+            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg1IVtnh7AB1kuAMvCCAIFqoAjBNOfUcYdDMXxCxlqGkbTU0qj3pv80c8uaGcyO1gYLTViJryvOFY9-CbCPrjz8qOYMF86KsGV6LqoPJibX1GhBBps4i9Ez9L2KURB83XMGvEtJN0NOkzsdNXhY1_04F3rI4hH6-XuNRigu_QHbgR0X8lZNcAQVxrvxjw0/s1600/f3.jpg" alt="product image" />
+            <span>adidas</span>
+            <h4>Cartoon Astronaut T-Shirts</h4>
+            <div class="stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <h4 class="price">$78</h4>
+            <a href="#"><i class="fa-solid fa-cart-shopping buy-icon"></i></a>
+          </div>
+          <div class="product-cart">
+            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEia9_xlEJjCPWX95cZW3lfE4grLRVUSQ0Fmj1Cv0o_BCbqrDUhSWQMh-62cNP7yDYyf7gG0tn7fZPqtEGDTFKMH5QZ7mo6AyfjaH8gdI6hvXfDUXAVvFRWJCbi27x_jTZ13F5UFTkjS5FXf804xpyrfZVql53emtXPKUKgehKrI2jjtzfmOQcnHVoMa5Vc/s1600/f4.jpg" alt="product image" />
+            <span>adidas</span>
+            <h4>Cartoon Astronaut T-Shirts</h4>
+            <div class="stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <h4 class="price">$78</h4>
+            <a href="#"><i class="fa-solid fa-cart-shopping buy-icon"></i></a>
+          </div>
+          <div class="product-cart">
+            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgHiPMYmwDd7NcukWcSy-NdjhEXYtfR9bJfgG-6kRMUrN9ZcjPX4m83obecfsKCE_i8K1pVuCUYMS_V37W4Y9TO-QLFhtXwTmkGxgF7cMt28F6Vs8yCcn071B8sRf69Q3PiMv8a978oIcwjATBQ7V_NRq5SjXnefCudq99NqemgV3yctOm0JUjvXBl5RgA/s1600/f5.jpg" alt="product image" />
+            <span>adidas</span>
+            <h4>Cartoon Astronaut T-Shirts</h4>
+            <div class="stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <h4 class="price">$78</h4>
+            <a href="#"><i class="fa-solid fa-cart-shopping buy-icon"></i></a>
+          </div>
+          <div class="product-cart">
+            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiV2PU8h9Ppk9xXJAONAqO2Gs0Q82o4hKk__cds6nMnTkD3WW2n6yNDTgHs2FckvrGJ6TF-9At1WCgQe-xPYxDlXSzpLBqGdsCclMnoqlkm6eProwjWjGaP1DjFKm7jrNrjogLDK66ywBCJ-oYT7Ay5TNmtSUBQA1QaOHRM_DinzXagP2kcLOHkIwSi4iI/s1600/f6.jpg" alt="product image" />
+            <span>adidas</span>
+            <h4>Cartoon Astronaut T-Shirts</h4>
+            <div class="stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <h4 class="price">$78</h4>
+            <a href="#"><i class="fa-solid fa-cart-shopping buy-icon"></i></a>
+          </div>
+          <div class="product-cart">
+            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjQsWMHY_JXYz-lAepdZ_rs0Wfx39eM_d68cI9wU4QGs_PAeH0YGRj16zfb5smAd2KYyb1Nqkd-7XkiGyOXIOcPsy9mOAW89IzpazDzWqc-pseX_76mB8d0NhUYoNxDGiksDx97LPLVLqEhfZsfTrphBqxC6ZNs8xuBPW92P4EEG-rWa74BPyf2XMZfiIU/s1600/f7.jpg" alt="product image" />
+            <span>adidas</span>
+            <h4>Cartoon Astronaut T-Shirts</h4>
+            <div class="stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <h4 class="price">$78</h4>
+            <a href="#"><i class="fa-solid fa-cart-shopping buy-icon"></i></a>
+          </div>
+          <div class="product-cart">
+            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi27wHtKlsDuHo9KErVdjuuNdsf04RWSTZU3hTB-NW2N2w68oJXVHoCcRZ9xzk5235hmq-FrC4dBJILhHyHPj5f7ta2A7AWWmqzBdDYQ8ltPpTOu1pA-es_k2OzK8LiYvuZ_jwQIaVoA21bguNc5AgnOsWTOZeyuDC9cqmOAJNMPpBQE-fcJM7M4GkUp_8/s1600/f8.jpg" alt="product image" />
+            <span>adidas</span>
+            <h4>Cartoon Astronaut T-Shirts</h4>
+            <div class="stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <h4 class="price">$78</h4>
+            <a href="#"><i class="fa-solid fa-cart-shopping buy-icon"></i></a>
+          </div>
+        </div>
+      </section>
+
+      <section id="off-banner" class="section-m1">
+        <h4>Repaire Services</h4>
+        <h2>Up to 70% Off - All t-Shirts & Accessories</h2>
+        <button class="normal">Explore More</button>
+      </section>
+
+      <section class="product-section" class="section-p1">
+        <h1>New Arrivals</h1>
+        <p>Summer Collection New Morden Design</p>
+        <div class="pro-collection">
+          <div class="product-cart">
+            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhbHjTJIe0Ve1q_zQd9S-SNSvfbldxnwSoM-UIFEetLP7QI2bNO5KfWlh4eveL8bOPAWWqWiUN0Y17s4K_gyF3uK5nUlz-IH65cuKiOH0jZi6SmxN0ej-WJnceNKThQdMjd_t6hs59iw6z0QMnNcZHdjCqBgh5nvxjmd3Iwa8Bv45MO6ytd8BhORCY19gQ/s1600/n1.jpg" alt="product image" />
+            <span>adidas</span>
+            <h4>Cartoon Astronaut T-Shirts</h4>
+            <div class="stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <h4 class="price">$78</h4>
+            <a href="#"><i class="fa-solid fa-cart-shopping buy-icon"></i></a>
+          </div>
+          <div class="product-cart">
+            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjdFoxAosPUo6YuBYXOGDgi_RtlFlMiK_diRe2kvNIDi5BiULLBBmuB54_7HBvNBIq30cejvhyphenhyphenshC5rVwe6G6fBznUHvtL7cCMSXdlf1bunEiUQSInsKBM9miRtKv90U_Sb0IkKaEmR4tmVgaCkr5929ZT-7NdKjoBvIFPHIvJlxdsghrhNNM59n_gb5MY/s1600/n2.jpg" alt="product image" />
+            <span>adidas</span>
+            <h4>Cartoon Astronaut T-Shirts</h4>
+            <div class="stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <h4 class="price">$78</h4>
+            <a href="#"><i class="fa-solid fa-cart-shopping buy-icon"></i></a>
+          </div>
+          <div class="product-cart">
+            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjX0_a-105IwmTCYhe_Ga8sc5Tb4lNDRqz04JVBEbszgmag8CwldG-4l95mvVyG8FPhEQ1PhFc5LvsVRwL-37AJAsJqWawhdB-iSYAdYbDSGq6Qr1qrwgPQBleLhbND03AbJmBM-LC8wIP32tZM8PjKAzBkhhgv-Tk4JrC5KyWF4sUWe7pW8zskhnd0O1o/s1600/n3.jpg" alt="product image" />
+            <span>adidas</span>
+            <h4>Cartoon Astronaut T-Shirts</h4>
+            <div class="stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <h4 class="price">$78</h4>
+            <a href="#"><i class="fa-solid fa-cart-shopping buy-icon"></i></a>
+          </div>
+          <div class="product-cart">
+            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhUxzN771zcMAFYiYbPXksO1_50lHNc2BmQ2fkOPNKroUWmiQTKaP3aHIfF3I5MObkT5mIkTZSBwEUzRmURF3WnMVo4BzKnu-0RBYvF1IeDGeK0cKpsK_8JFinM3bzFyqOnoRgrBWNt5NlfFcbU_S4V8t1y1IoqQqIr7POqo9COTzHGd5ja7nW_azKMx6c/s1600/n4.jpg" alt="product image" />
+            <span>adidas</span>
+            <h4>Cartoon Astronaut T-Shirts</h4>
+            <div class="stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <h4 class="price">$78</h4>
+            <a href="#"><i class="fa-solid fa-cart-shopping buy-icon"></i></a>
+          </div>
+          <div class="product-cart">
+            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi-pvgxUrfjyzpzDQVIdRdRxfB963JQfVa_qlH29nFhqDIN0qoSRDaoMAxkmsDMg0pCSCtp6qssP-ADXDmdimsYDM13ZlMNxoixh1VNWK3qzbfdiyJ7PMKMYbSirKzayRfOMScc902-4H3Lv5dcPCVIdpYrcwA10k2qLqxYvdPIacvHCK6Fii2KYDCJY84/s1600/n5.jpg" alt="product image" />
+            <span>adidas</span>
+            <h4>Cartoon Astronaut T-Shirts</h4>
+            <div class="stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <h4 class="price">$78</h4>
+            <a href="#"><i class="fa-solid fa-cart-shopping buy-icon"></i></a>
+          </div>
+          <div class="product-cart">
+            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhuKZ9Adsm-b1YVOFf4py3A7vxCSQskJe2GfK0yn_UTQa6VnmPhmpWq0xS_DmUrAUGDaomB6jbpsTcdyQXZdZpPtDedNcmu7_nNfJlFoQZG0dyJPZ8iQs0oxxIQWqcwcj2JnkKhNqSM3gx9vVsVGyQVCQVN7fZQ32ko6sBdHIGuAZZUPo4O4F45sOjWntg/s1600/n6.jpg" alt="product image" />
+            <span>adidas</span>
+            <h4>Cartoon Astronaut T-Shirts</h4>
+            <div class="stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <h4 class="price">$78</h4>
+            <a href="#"><i class="fa-solid fa-cart-shopping buy-icon"></i></a>
+          </div>
+          <div class="product-cart">
+            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh1lQBbG8uZL29rdPWZ4VZByQA3sp91GCwR42RqYUiRXk-M8dPUgc0mkePXIAEkjyEZeoLUATZPxqczIQqOoN4-n0ssM0QjK4LdYHm-cbOUJ6Yobhrl_Yf7XDyMstLV1w4eAuKIcOv_WwWonl3IzBcsIrzKGNbw2U3O_GXOGVJRMszzA0KUQDrY0Bmif7I/s1600/n7.jpg" alt="product image" />
+            <span>adidas</span>
+            <h4>Cartoon Astronaut T-Shirts</h4>
+            <div class="stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <h4 class="price">$78</h4>
+            <a href="#"><i class="fa-solid fa-cart-shopping buy-icon"></i></a>
+          </div>
+          <div class="product-cart">
+            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhu-A_ncbI6vJQrWvIdTZejJnfij6hhZVmWRCt9AGVci8iaBHW9YRdjMEhteoTjzPy6SFrYE1octZLSb9h9HXounkeoFvDyRgf-GyoKK97nLAqlRMefwwgjbEufzugVpDyZ6kcKxOlw9coq14zYxjFFd5EfN-DBOcyv1KYH0D59kL-bAT8UvT1D_EkxY8o/s1600/n8.jpg" alt="product image" />
+            <span>adidas</span>
+            <h4>Cartoon Astronaut T-Shirts</h4>
+            <div class="stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <h4 class="price">$78</h4>
+            <a href="#"><i class="fa-solid fa-cart-shopping buy-icon"></i></a>
+          </div>
+        </div>
+      </section>
+
+      <section id="banners" class="section-p1">
+        <div class="big-banners">
+          <div class="big-banners-1">
+            <h4>crazy deals</h4>
+            <h2>buy 1 get 1 free</h2>
+            <span>The best classic dress is on sale at coro</span>
+            <button class="banner-btn">Learn More</button>
+          </div>
+          <div class="big-banners-2">
+            <h4>spring/summer</h4>
+            <h2>upcomming season</h2>
+            <span>The best classic dress is on sale at cara</span>
+            <button class="banner-btn">Collection</button>
+          </div>
+        </div>
+        <div class="small-banners">
+          <div class="small-banners-1">
+            <h2>SEASONAL SALE</h2>
+            <h5>Winter Collection 50% Off</h5>
+          </div>
+          <div class="small-banners-2">
+            <h2>NEW FOOTWEAR COLLECTION</h2>
+            <h5>Spring/Summer 2022</h5>
+          </div>
+          <div class="small-banners-3">
+            <h2>T-SHIRTS</h2>
+            <h5>New Trendy Prints</h4>
+          </div>
+        </div>
+      </section>
+
+      <section id="newsletter">
+        <div class="newsletter-text">
+          <!--h3>Sign Up For Newsletters</h3-->
+          <h6><span>Special offers</span></h6>
+        </div>
+        <div class="form">
+          <input type="email" placeholder="Your email address" id="email-address-input">
+          <button>Sign Up</button>
+        </div>
+      </section>
+
+    </main>
+
+    <!--footer section-->
+
+    <footer>
+      <div id="footer">
+        <div class="contact">
+          <a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjEYjN5oKB59UqBZrhHgXYk8Wva4D4KHJHHjDQmKIZyJYukLzQJFXPFcaZ0FOOVmDOJFC5onBhwk9DNvhLw7nHiG9Km9GtGJjDCDKe5DyZ93EsfUfWvs1uRVfocaBKjvM3T6ScdrzXPQgt4qYcGWmEeWgwW5TSGM6yiWiBNgetu1Qyl7RpMriiyuW679vo/s1600/logo.png" alt="" /></a>
+          <br> <br>
+          <br> 
+          <h3>Contact</h3>
+          <address>
+            <p><b>Address:</b> Wellington Road, Street 32. San Francisco</p>
+            <p><b>Phone:</b> Wellington Road, Street 32. San Francisco</p>
+            <p><b>Hours</b> 10:00 - 18:00. Mon - Sat</p>
+          </address>
+          <h3>Follow Us</h3>
+          <br> 
+          <div class="socials">
+            <a href="#"><i class="fa-brands fa-facebook-square"></i></a>
+            <a href="#"><i class="fa-brands fa-youtube"></i></a>
+            <a href="#"><i class="fa-brands fa-telegram"></i></a>
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#"><i class="fa-brands fa-twitter"></i></a>
+          </div>
+        </div>
+        <div class="about">
+          <h3>About</h3>
+          <br> 
+          <a href="#">About Us</a>
+          <a href="#">Delivery Information</a>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms & Conditions</a>
+          <a href="#">Contact Us</a>
+        </div>
+        <div class="myaccount ">
+          <h3>My account</h3>
+          <br> 
+          <a href="#">Sign In</a>
+          <a href="#">View Cart</a>
+          <a href="#">My Wishlist</a>
+          <a href="#">Track My Order</a>
+          <a href="#">Help</a>
+        </div>
+        <div class="install">
+          <h3>Install App</h3>
+          <br> 
+          <p>From App Store or Google Play</p>
+          <div class="download">
+            <a href="#"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiTkdTfU-8e60D4TG8RO4NKRPjD41qzYoyCqsotQh7vZixSDZ6as4BlE97hhnXF-ZAorxnNH3-wAqrzJ_KmNRI9V8D-v4uKM0r1y5MKtcGDPL_1MxHjvmiq1Dffxpl0TvmzzPZGBzOVtbUWlqla-kw2zznZUoAi0z47SKaU7QvQ5-V6oZW6vUxifKPL_l0/s1600/app.jpg" alt=""></a>
+            <a href="#"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgCt5sNS9wBsQet4hpeSsfFnMD_sCjPwwFOPqYu-Zru1RMqlgMnLa9HQz57VsvpTwLrLRLnulYhynPdFjLGyBesergPQqX6W_BUzZD9qNs4DAY2BqJ-r4LruFO-DIEFNoZGa63K1xyUsNh2cQZnkHcpSRSZ8MGJJ-pnM49nmmRZAMOfA9B447upCUXpxsg/s1600/play.jpg" alt=""></a>
+          </div>
+          <p>Secured Payment Gateways</p>
+          <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiGS7jBcvopZ2PXGrNq3liRHYI63ALSC44aFjvHFgUozm8qdHoYApvR5qFKLby6w18B6mjqeY9JT_Cb3lc4NHjIO6k0lK52H8LoXN3ppAlYRubdJWkCgZ1j9t5odkedpgHDIgTZoecjE2JZS0RmyNaW3dIJ4ipxkpJ-C8UY7ijrDL2lP7ezinoQic5JX1Q/s1600/pay.png" alt="">
+        </div>
+        
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
